@@ -1,7 +1,7 @@
-# 2022_pyriformis
-
 # Stentor pyriformis gene prediction
 #### By: Ashley Albright
+
+This repository contains a description of annotating an assembled genome for Stentor pyriformis with all accompanying code. 
 
 Preprint: TBD
 
