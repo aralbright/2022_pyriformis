@@ -95,3 +95,15 @@ awk '{if  ( $2 ~ /\./ ) { print $} }' CDS_count.txt
 I found one transcript that is not divisible by 3, implying that there was an error we need to track down. For future reference: contig_203.0-203133.g959.t1
 
 I also double checked the annotations against the RNA-seq in IGV. 
+
+### 4. GFF Parser + Contig/Gene Name Changer 
+
+To standardize the contig and gene names, I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file. See change_gff_ids.ipynb in this folder for the code. 
+
+See change_fasta_contigs.ipynb for changing the contig names in a fasta file. 
+
+
+
+
+
+
