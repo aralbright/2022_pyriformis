@@ -7,6 +7,8 @@ Preprint: TBD
 
 Authors: TBD
 
+Final files deposited here: TBD
+
 
 ### 1. Align RNA-seq reads to the assembled pyriformis genome
 
