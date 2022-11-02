@@ -12,6 +12,8 @@ Final files deposited here: TBD
 
 ### 1. Align RNA-seq reads to the assembled pyriformis genome
 
+Similar to [Singh et al 2022](https://www.biorxiv.org/content/10.1101/2021.12.14.471607v4.full), we modified the source code of HISAT2 to accomodate short introns. In hisat2.cpp, minIntronLen was lowered to 9 from 20. 
+
 - Build hisat2 index
 
   -  -p 4 specifies the number of threads to use
