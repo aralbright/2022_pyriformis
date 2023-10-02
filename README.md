@@ -104,7 +104,7 @@ I also double checked the annotations against the RNA-seq in IGV.
 
 ### 4. GFF Parser + Contig/Gene Name Changer 
 
-To standardize the contig and gene names, I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file. See change_gff_ids.ipynb in this folder for the code. 
+To standardize the contig and gene names, I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file (Source: https://www.biorxiv.org/content/10.1101/2023.03.27.534457v2.abstract). See change_gff_ids.ipynb in this folder for the code. 
 
 See change_fasta_contigs.ipynb for changing the contig names in a fasta file. 
 
