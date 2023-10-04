@@ -109,7 +109,7 @@ I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mi
 
 ### 6. Generate protein fasta 
 
-[Biopython Tutorial](https://biopython.org/wiki/Gene_predictions_to_protein_sequences)
+Biopython tutorial: https://biopython.org/wiki/Gene_predictions_to_protein_sequences
 
 
 
