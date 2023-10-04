@@ -107,9 +107,9 @@ I also double checked the annotations against the RNA-seq in IGV.
 
 I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file (Source: https://www.biorxiv.org/content/10.1101/2023.03.27.534457v2.abstract). See change_gff_ids.ipynb in this folder for the code. 
 
+### 6. Generate protein fasta 
 
-
-
+[Biopython Tutorial](https://biopython.org/wiki/Gene_predictions_to_protein_sequences)https://biopython.org/wiki/Gene_predictions_to_protein_sequences
 
 
 
