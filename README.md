@@ -9,8 +9,11 @@ Authors: TBD
 
 Final files deposited here: TBD
 
+### 1. Change contig names 
 
-### 1. Align RNA-seq reads to the assembled pyriformis genome
+See change_fasta_contigs.ipynb for changing the contig names in a fasta file. 
+
+### 2. Align RNA-seq reads to the assembled pyriformis genome
 
 Similar to [Singh et al 2022](https://www.biorxiv.org/content/10.1101/2021.12.14.471607v4.full), we modified the source code of [HISAT2](https://www.nature.com/articles/s41587-019-0201-4) to accomodate short introns. In hisat2.cpp, minIntronLen was lowered to 9 from 20. 
 
@@ -63,7 +66,7 @@ samtools sort sample.bam -o sample.sorted.bam
 samtools index sample.sorted.bam
 ```
 
-### 2. Run Intronarrator/Augustus
+### 3. Run Intronarrator/Augustus
 
 
 Source: https://github.com/Swart-lab/Intronarrator
@@ -86,27 +89,25 @@ Stentor coeruleus uses a standard genetic code (1), and I made that assumption h
 ./intronarrator.sh /usr/local/Cellar/augustus/3.5.0_1 /usr/local/Cellar/augustus/3.5.0_1/config StentorV2 stentor_pyriformis.20210302_final sample.sorted
 ```
 
-### 3. Final checks
+### 4. Final checks
 
 I double checked the predictions by making sure the length of coding sequences were divisible by 3.
 
 ```
-cat stentor_pyriformis.20210302_final.0.2.final.CDS.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0)/3;} END { print c; }' > CDS_count.txt
+cat stentor_pyriformis.20210302_final.nameupdate.0.2.final.CDS.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0)/3;} END { print c; }' > CDS_count.txt
 ```
 
 ```
-awk '{if  ( $2 ~ /\./ ) { print $} }' CDS_count.txt
+awk '{if  ( $2 ~ /\./ ) { print $0} }' CDS_count.txt
 ```
-
-I found one transcript that is not divisible by 3, implying that there was an error we need to track down. For future reference: contig_203.0-203133.g959.t1
 
 I also double checked the annotations against the RNA-seq in IGV. 
 
-### 4. GFF Parser + Contig/Gene Name Changer 
+### 5. GFF Parser + Contig/Gene Name Changer 
 
-To standardize the contig and gene names, I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file (Source: https://www.biorxiv.org/content/10.1101/2023.03.27.534457v2.abstract). See change_gff_ids.ipynb in this folder for the code. 
+I modified a Drosophila melanogaster GFF parser written by Colleen Hannon and Mike Eisen to fit the format of my GFF file (Source: https://www.biorxiv.org/content/10.1101/2023.03.27.534457v2.abstract). See change_gff_ids.ipynb in this folder for the code. 
 
-See change_fasta_contigs.ipynb for changing the contig names in a fasta file. 
+
 
 
 
